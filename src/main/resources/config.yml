@@ -1,0 +1,63 @@
+# anyNoCMDS Configuration - CommandWhitelist Style
+# Groups define which commands players can see/use (whitelist) and which subcommands they cannot (blacklist).
+# All groups except "default" require the permission: anynocmds.group.<group_name>
+
+messages:
+  prefix: "anyNoCMDS > "
+  command_denied: "No such command."
+  subcommand_denied: "You cannot use this subcommand."
+  no_permission: "<red>You don't have permission to do this."
+  no_such_subcommand: "<red>No subcommand by that name."
+  config_reloaded: "<yellow>Configuration reloaded."
+  added_to_whitelist: "<yellow>Whitelisted command <gold>%s <yellow>for group <gold>%s"
+  removed_from_whitelist: "<yellow>Removed command <gold>%s <yellow>from group <gold>%s"
+  added_to_blacklist: "<yellow>Blacklisted subcommand <gold>%s <yellow>for group <gold>%s"
+  removed_from_blacklist: "<yellow>Removed subcommand <gold>%s <yellow>from group <gold>%s"
+  group_doesnt_exist: "<red>Group doesn't exist or error occurred."
+  invalid_command: "<red>Invalid command."
+
+# Message type: CHAT, ACTIONBAR, CHAT_AND_ACTIONBAR
+message_type: CHAT
+
+# Sound played when command is denied (requires message_type not NONE)
+command_denied_sound:
+  enabled: false
+  key: "entity.villager.no"
+  volume: 1.0
+  pitch: 1.0
+
+# Groups configuration
+# Each group has:
+#   - commands: list of commands players in this group CAN use (whitelist)
+#   - subcommands: list of subcommands players in this group CANNOT use (blacklist)
+#   - custom_command_denied_message: custom message when denied (empty = use default)
+groups:
+  default:
+    commands:
+      - "help"
+      - "spawn"
+      - "bal"
+      - "balance"
+      - "baltop"
+      - "pay"
+      - "r"
+      - "msg"
+      - "tpa"
+      - "tpahere"
+      - "tpaccept"
+      - "tpdeny"
+      - "warp"
+    subcommands:
+      - "help about"
+    custom_command_denied_message: ""
+  admin:
+    commands:
+      - "*"
+    subcommands: []
+    custom_command_denied_message: ""
+
+# If true, commands not in any group's whitelist will be hidden from tab completion and /help
+hide_unknown_commands: false
+
+# Debug mode
+debug: false

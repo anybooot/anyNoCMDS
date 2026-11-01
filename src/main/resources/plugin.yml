@@ -1,0 +1,16 @@
+name: anyNoCMDS
+version: 1.0.0
+main: com.anyboot.anynocmds.AnyNoCMDS
+api-version: 1.20
+description: CommandWhitelist-style plugin - filters commands by permission groups with whitelist/blacklist
+author: Anyboot
+depend: [LuckPerms]
+softdepend: [ProtocolLib]
+
+commands:
+  anynocmds:
+    description: Main anyNoCMDS command
+    usage: /anynocmds <reload|whitelist|blacklist|list|dump|help>
+    permission: anynocmds.admin
+    permission-message: "<red>You don't have permission to use this command."
+    aliases: [anc, cmdwhitelist, cw]
